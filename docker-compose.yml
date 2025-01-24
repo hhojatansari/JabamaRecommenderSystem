@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  recommender:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jabama-recommender-systems:v0
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: always
